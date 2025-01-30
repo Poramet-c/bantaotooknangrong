@@ -70,9 +70,9 @@ function generatePattern() {
             { x: 200, y: 1580 }, { x: 826, y: 1580 }
         ];
 
-        // Ensure there are exactly 10 images uploaded
-        if (files.length !== 10) {
-            alert("Please upload exactly 10 images.");
+        // Check if there are uploaded files
+        if (files.length === 0) {
+            alert("Please upload at least one image.");
             return;
         }
 
@@ -83,15 +83,18 @@ function generatePattern() {
                 // Draw the image on the canvas at the correct position and size (626x303)
                 ctx.drawImage(img, x, y, 626, 303);
             });
-        }).then(() => {
+
             // Draw Thai text after images are placed
             drawThaiText();
             
             // Enable the download button once the images are placed
             document.getElementById('downloadBtn').disabled = false;
+        }).catch((error) => {
+            alert("Error loading images: " + error);
         });
     };
 }
+
 
 function loadImage(file) {
     return new Promise((resolve, reject) => {
