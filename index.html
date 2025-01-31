@@ -18,14 +18,19 @@
 
 <body>
     <h1>บท.นร. : บรรเทาทุกข์นางรอง</h1>
-    
+
     <!-- Container for form and canvas -->
     <div id="form-container">
         <form id="uploadForm">
             <label for="imageUpload" class="file-upload-btn">Choose Files</label>
             <input type="file" accept="image/*" id="imageUpload" multiple style="display: none;">
+            
+            <!-- Add a new span to display the number of images uploaded -->
+            <span id="fileCount">No files selected</span><br><br>
+            
             <button type="button" onclick="generatePattern()">Generate Image</button>
-        </form> 
+        </form>
+        
 
         <div class="form-details">
             <h2>Enter Details</h2>
@@ -34,22 +39,22 @@
 
             <label for="firstName">ชื่อ:</label>
             <input type="text" id="firstName"><br><br>
-            
+
             <label for="lastName">นามสกุล:</label>
             <input type="text" id="lastName"><br><br>
-            
+
             <label for="studentId">เลขที่:</label>
             <input type="text" id="studentId"><br><br>
-            
+
             <label for="class">ชั้น:</label>
             <input type="text" id="class"><br><br>
         </div>
     </div>
 
-    <canvas id="resultCanvas" width="1654" height="2339"></canvas>
+    <div id="canvas-container"></div> <!-- Container to display all canvases -->
 
     <button id="downloadBtn" onclick="downloadAsPDF()" disabled>Download as PDF</button>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
