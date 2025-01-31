@@ -5,6 +5,11 @@ function saveFormData() {
     const lastName = document.getElementById('lastName').value;
     const studentId = document.getElementById('studentId').value;
     const className = document.getElementById('class').value;
+    const points = document.getElementById('points').value;
+    const date = document.getElementById('date').value;
+    const months = document.getElementById('months').value;
+    const semeter = document.getElementById('semeter').value;
+    const semeterYear = document.getElementById('semeter-year').value;
 
     // Save each input field to localStorage
     localStorage.setItem('prefix', prefix);
@@ -12,6 +17,11 @@ function saveFormData() {
     localStorage.setItem('lastName', lastName);
     localStorage.setItem('studentId', studentId);
     localStorage.setItem('class', className);
+    localStorage.setItem('points', points);
+    localStorage.setItem('date', date);
+    localStorage.setItem('months', months);
+    localStorage.setItem('semeter', semeter);
+    localStorage.setItem('semeterYear', semeterYear);
 }
 
 // Function to load saved form data from localStorage
@@ -32,10 +42,25 @@ function loadFormData() {
     if (localStorage.getItem('class')) {
         document.getElementById('class').value = localStorage.getItem('class');
     }
+    if (localStorage.getItem('points')) {
+        document.getElementById('points').value = localStorage.getItem('points');
+    }
+    if (localStorage.getItem('date')) {
+        document.getElementById('date').value = localStorage.getItem('date');
+    }
+    if (localStorage.getItem('months')) {
+        document.getElementById('months').value = localStorage.getItem('months');
+    }
+    if (localStorage.getItem('semeter')) {
+        document.getElementById('semeter').value = localStorage.getItem('semeter');
+    }
+    if (localStorage.getItem('semeterYear')) {
+        document.getElementById('semeter-year').value = localStorage.getItem('semeterYear');
+    }
 }
 
 // Automatically save form data when any input field is changed
-document.querySelectorAll('input').forEach(input => {
+document.querySelectorAll('input, select').forEach(input => {
     input.addEventListener('input', saveFormData);
 });
 
@@ -157,6 +182,11 @@ function drawThaiText(ctx) {
     const lastName = document.getElementById('lastName').value;
     const studentId = document.getElementById('studentId').value;
     const classValue = document.getElementById('class').value;
+    const points = document.getElementById('points').value;
+    const month = document.getElementById('months').value;
+    const semeter = document.getElementById('semeter').value;
+    const semeterYear = document.getElementById('semeter-year').value;
+    const dateTEMP = document.getElementById('date')
 
     // Combine คำนำหน้าชื่อ + ชื่อ
     const fullName = prefix + " " + firstName;
@@ -169,7 +199,47 @@ function drawThaiText(ctx) {
     ctx.fillText(fullName, 256, 200);  // ชื่อ (combined with คำนำหน้า)
     ctx.fillText(lastName, 830, 200);   // นามสกุล
     ctx.fillText(studentId, 1270, 200); // เลขที่
-    ctx.fillText(classValue, 1400, 200); // ชั้น
+    ctx.fillText(classValue, 1375, 200); // ชั้น
+    ctx.fillText(points, 1390, 255); 
+    ctx.fillText(month, 585, 255);
+    ctx.fillText(semeter, 1020, 255);
+    ctx.fillText(semeterYear, 1080, 255);
+
+    console.log(month);
+    console.log(semeter);
+
+    if (month != "")
+        ctx.fillText('\u2713', 420, 255);
+    
+
+    if (semeter != "")
+        ctx.fillText('\u2713', 770, 255);
+    
+
+    if ( dateTEMP.value) {
+        ctx.fillText(dateTEMP.value, 750, 2070)
+    } else {
+        const date = new Date();
+
+        // Array of months in Thai
+        const thaiMonths = [
+            "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", 
+            "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", 
+            "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+        ];
+        
+        // Get the day, month, and year
+        const day = date.getDate();  // Add leading zero if needed
+        const monthThai = thaiMonths[date.getMonth()];  
+        const yearBE = date.getFullYear() + 543;  // Convert to Buddhist Era
+        
+        // Get the last two digits of the Buddhist Era year
+         const yearShortBE = yearBE.toString();
+        
+        // Combine to get DD Month Thai YY_BE format
+        const DDMonthThaiYY_BE = `${day} ${monthThai} ${yearShortBE}`;
+        ctx.fillText(DDMonthThaiYY_BE, 750, 2070)
+    }
 
     // Draw the combined "ชื่อ นามสกุล" with 4 spaces between them
     const fullNameWithSpaces = fullName + "    " + lastName;  // Adding 4 spaces
@@ -216,4 +286,3 @@ function downloadAsPDF() {
     // Save the PDF with the dynamic file name
     pdf.save(fileName);
 }
-
