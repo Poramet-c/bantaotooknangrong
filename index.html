@@ -21,6 +21,17 @@
 
     <!-- Container for form and canvas -->
     <div id="form-container">
+        <div id="tips" style="margin: 20px;">
+            <h3>คำแนะนำการใช้งาน</h3>
+            <p>
+                1. อัปโหลดรูปภาพตามที่ต้องการ (สามารถอัปโหลดได้หลายไฟล์พร้อมกัน)<br>
+                2. กรอกข้อมูลในฟอร์ม เช่น คำนำหน้าชื่อ, ชื่อ, นามสกุล, เลขที่ ฯลฯ<br>
+                3. เมื่อกรอกข้อมูลครบแล้ว ให้กดปุ่ม "Generate Image" เพื่อสร้างรูปภาพที่มีข้อมูลตามที่คุณกรอก<br>
+                4. หากต้องการแก้ไขข้อมูลหรือรูปภาพ สามารถอัปโหลดใหม่ หรือแก้ไขฟอร์มแล้วกด "Generate Image" อีกครั้ง<br>
+                5. เมื่อทุกอย่างเรียบร้อยแล้ว ให้กดปุ่ม "Download" เพื่อดาวน์โหลดไฟล์ PDF<br>
+            </p>
+        </div>
+
         <form id="uploadForm">
             <label for="imageUpload" class="file-upload-btn">Choose Files</label>
             <input type="file" accept="image/*" id="imageUpload" multiple style="display: none;">
