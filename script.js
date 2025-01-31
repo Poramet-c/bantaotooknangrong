@@ -172,11 +172,29 @@ function downloadAsPDF() {
     // Construct the filename with the format: "Name_YYYY-MM-DD_HH-MM-SS.pdf"
     const filename = `${fullName}_${date}_${time}.pdf`;
 
-    // Ensure jsPDF is correctly initialized
+
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('portrait', 'px', [canvas.width, canvas.height]);
-    
+
     pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-    pdf.save(filename);  // Save PDF with the dynamic filename
+
+    const pdfBlob = pdf.output('blob');
+
+    const blobUrl = URL.createObjectURL(pdfBlob);
+
+    const newTab = window.open(blobUrl, '_blank');
+    if (!newTab) {
+        alert('Please allow popups to open the PDF in a new tab.');
+    }
+
+    // Optional: Download automatically
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = filename;
+    link.click();
+
+    // Clean up the blob URL after a short delay
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
 }
+
 
