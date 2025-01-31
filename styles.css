@@ -221,3 +221,29 @@ canvas {
     width: fit-content;
     box-shadow: #333 1px 1px 20px;
 }
+
+#tips {
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ccc; /* Border with subtle gray */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    font-family: Arial, sans-serif; /* Clean and modern font */
+    color: #333; /* Dark gray text for readability */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#tips h3 {
+    color: #555; /* Slightly lighter gray for the heading */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#tips p {
+    font-size: 16px;
+    line-height: 1.6; /* Improve line spacing for readability */
+}
+
+#tips p b {
+    color: #333; /* Bold text color for emphasis */
+}
