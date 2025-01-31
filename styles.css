@@ -247,3 +247,14 @@ canvas {
 #tips p b {
     color: #333; /* Bold text color for emphasis */
 }
+
+#reportLink {
+    position: relative;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    color: #007bff; /* Makes the link blue */
+    font-weight: bold;
+}
