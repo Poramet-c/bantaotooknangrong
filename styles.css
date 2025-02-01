@@ -258,3 +258,41 @@ canvas {
     color: #007bff; /* Makes the link blue */
     font-weight: bold;
 }
+
+/* License Section Styling */
+p[xmlns\:cc] {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+p[xmlns\:cc] a {
+    color: #007bff; /* Color for the links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p[xmlns\:cc] a:hover {
+    text-decoration: underline;
+}
+
+p[xmlns\:cc] img {
+    height: 18px; /* Adjust image size */
+    vertical-align: middle; /* Align the icons vertically with text */
+    margin-left: 3px;
+}
+
+p[xmlns\:cc] a[rel="license noopener noreferrer"] {
+    margin-left: 8px; /* Add some space before the license icons */
+}
+
+p[xmlns\:cc] {
+    background-color: #f9f9f9; /* Optional light background */
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
