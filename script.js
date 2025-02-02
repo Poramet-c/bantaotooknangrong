@@ -283,13 +283,19 @@ function downloadAsPDF() {
     // Create the file name in the format "FIRSTNAME-LASTNAME-TIME.pdf"
     const fileName = `${firstName}-${lastName}-${currentTime}.pdf`;
 
-    // Generate the PDF as a Blob and open it in a new tab
+    // Generate the PDF as a Blob
     const blob = pdf.output('blob');
     const url = URL.createObjectURL(blob);
 
-    // Open the PDF in a new tab
-    window.open(url);
+    // Create a temporary anchor element to download the PDF
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+
+    // Trigger the download
+    a.click();
 
     // Optionally revoke the object URL after a delay to avoid memory leaks
     setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
