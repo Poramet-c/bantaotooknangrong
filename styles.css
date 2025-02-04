@@ -21,14 +21,12 @@ body {
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
     font-size: 2rem;
 }
 
 /* Form header */
 h2 {
     text-align: left;
-    margin-top: 20px;
     font-size: 1.5rem;
     color: #333;
 }
@@ -247,3 +245,128 @@ canvas {
 #tips p b {
     color: #333; /* Bold text color for emphasis */
 }
+
+#reportLink {
+    position: relative;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    color: #007bff; /* Makes the link blue */
+    font-weight: bold;
+}
+
+/* License Section Styling */
+p[xmlns\:cc] {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+p[xmlns\:cc] a {
+    color: #007bff; /* Color for the links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p[xmlns\:cc] a:hover {
+    text-decoration: underline;
+}
+
+p[xmlns\:cc] img {
+    height: 18px; /* Adjust image size */
+    vertical-align: middle; /* Align the icons vertically with text */
+    margin-left: 3px;
+}
+
+p[xmlns\:cc] a[rel="license noopener noreferrer"] {
+    margin-left: 8px; /* Add some space before the license icons */
+}
+
+p[xmlns\:cc] {
+    background-color: #f9f9f9; /* Optional light background */
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+#privacy-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#privacy-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#privacy-container p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#privacy-container a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    border: 2px solid #0066cc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#privacy-container a:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+#donation-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#donation-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#donation-container p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#qr-code {
+    max-width: 100%; /* Allow the QR code to adjust within the container */
+    height: auto; /* Maintain the aspect ratio */
+    border: 2px solid #0066cc;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
