@@ -215,9 +215,10 @@ function drawThaiText(ctx) {
     if (semeter != "")
         ctx.fillText('\u2713', 770, 255);
     
+    var disableDateCheckbox = document.getElementById("disableDate");
 
-    if ( dateTEMP.value) {
-        ctx.fillText(dateTEMP.value, 750, 2070)
+    if (dateTEMP.value) {
+        ctx.fillText(dateTEMP.value, 750, 2070);
     } else {
         const date = new Date();
 
@@ -238,7 +239,9 @@ function drawThaiText(ctx) {
         
         // Combine to get DD Month Thai YY_BE format
         const DDMonthThaiYY_BE = `${day} ${monthThai} ${yearShortBE}`;
-        ctx.fillText(DDMonthThaiYY_BE, 750, 2070)
+
+        if (!disableDateCheckbox.checked) 
+            ctx.fillText(DDMonthThaiYY_BE, 750, 2070);
     }
 
     // Draw the combined "ชื่อ นามสกุล" with 4 spaces between them

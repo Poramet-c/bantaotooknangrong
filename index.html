@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <h1>ระบบทำเอกสารแก้ไขมผ. (V3)</h1>
+    <h1>ระบบทำเอกสารแก้ไขมผ. (V3.2)</h1>
     <h2>(บรรเทาทุกข์นางรอง)</h2>
     <h2>(เปิดใน Browser เพื่อให้เว็บไซต์ทำงานได้ตามที่คาดหวัง)</h2>
 
@@ -80,8 +80,16 @@
             <label for="points">จำนวนคะแนน:</label>
             <input type="text" id="points" placeholder="ปล่อยว่างไว้ในกรณีไม่ต้องการให้แสดง"><br><br>
 
-            <label for="date">วัน/เดือน/ปี ที่ส่ง:</label>
-            <input type="text" id="date" placeholder="ปล่อยว่างไว้ในกรณีที่ใช้วันที่วันนี้"><br><br>            
+            <div id="date-container">
+                <label for="date">วัน/เดือน/ปี ที่ส่ง:</label>
+                <input type="text" id="date" placeholder="ปล่อยว่างไว้ในกรณีที่ใช้วันที่วันนี้">
+                <div class="checkbox-wrapper">
+                    <label for="disableDate" class="checkbox-label">
+                        <input type="checkbox" id="disableDate"> กดช่องนี้เพื่อให้โปรแกรมไม่กรอกวันที่
+                    </label>
+                </div>
+            </div>
+                    
 
         <label for="months" style="margin-top: 60px;">รายเดือน:</label>
         <select id="months">

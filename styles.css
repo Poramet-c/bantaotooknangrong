@@ -370,3 +370,45 @@ p[xmlns\:cc] {
     margin-top: 15px;
 }
 
+/*-----------------------------------------------------*/
+
+#date-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#date-container label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#date-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.checkbox-wrapper {
+    margin-top: -6px; /* Move checkbox closer to input */
+}
+
+.checkbox-label {
+    font-size: 0.875rem; /* Smaller font for a subtle, footnote-like feel */
+    width: 100%;
+    color: #777;
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
